@@ -1,3 +1,7 @@
+# How to add prisma in existing project
+
+Offical link: `https://www.prisma.io/docs/prisma-orm/add-to-existing-project/postgresql#2-initialize-prisma-8`
+
 # Prisma 8 (Prisma Next) Cheat Sheet
 
 Prisma 8 is a "contract-first" data layer, which fundamentally changes how the CLI and runtime operate compared to Prisma 7. 
