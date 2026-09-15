@@ -33,7 +33,7 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'a787ecff870800394311ddaa74f9d31b5ecb45be2e9631da1d43566d62d55ec9'>;
+  StorageHashBase<'bafb93e6d82cfa8bc69b86dc27c272748cc828bb5c8fa089574096a3eeca1f10'>;
 export type ExecutionHash =
   ExecutionHashBase<'d4570b372ca50ce0f1f6f5eea2977fad87b52005a60b1119ea4ed3bdc2135136'>;
 export type ProfileHash =
@@ -249,7 +249,7 @@ export type FieldOutputTypes = {
       readonly genres: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
       readonly runtime: CodecTypes['pg/int4@1']['output'] | null;
       readonly posterUrl: CodecTypes['pg/text@1']['output'] | null;
-      readonly createdBy: CodecTypes['pg/int4@1']['output'];
+      readonly createdBy: CodecTypes['pg/text@1']['output'];
       readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
     };
     readonly User: {
@@ -262,7 +262,7 @@ export type FieldOutputTypes = {
     };
     readonly WatchlistItem: {
       readonly id: CodecTypes['pg/text@1']['output'];
-      readonly userId: CodecTypes['pg/int4@1']['output'];
+      readonly userId: CodecTypes['pg/text@1']['output'];
       readonly movieId: CodecTypes['pg/text@1']['output'];
       readonly status: 'PLANNED' | 'WATCHING' | 'COMPLETED' | 'DROPPED';
       readonly rating: CodecTypes['pg/int4@1']['output'] | null;
@@ -282,7 +282,7 @@ export type FieldInputTypes = {
       readonly genres: ReadonlyArray<CodecTypes['pg/text@1']['input']>;
       readonly runtime: CodecTypes['pg/int4@1']['input'] | null;
       readonly posterUrl: CodecTypes['pg/text@1']['input'] | null;
-      readonly createdBy: CodecTypes['pg/int4@1']['input'];
+      readonly createdBy: CodecTypes['pg/text@1']['input'];
       readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
     };
     readonly User: {
@@ -295,7 +295,7 @@ export type FieldInputTypes = {
     };
     readonly WatchlistItem: {
       readonly id: CodecTypes['pg/text@1']['input'];
-      readonly userId: CodecTypes['pg/int4@1']['input'];
+      readonly userId: CodecTypes['pg/text@1']['input'];
       readonly movieId: CodecTypes['pg/text@1']['input'];
       readonly status: 'PLANNED' | 'WATCHING' | 'COMPLETED' | 'DROPPED';
       readonly rating: CodecTypes['pg/int4@1']['input'] | null;
@@ -309,7 +309,7 @@ export type StorageColumnTypes = {
   readonly public: {
     readonly movie: {
       readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
-      readonly createdBy: CodecTypes['pg/int4@1']['output'];
+      readonly createdBy: CodecTypes['pg/text@1']['output'];
       readonly genres: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly overview: CodecTypes['pg/text@1']['output'] | null;
@@ -334,7 +334,7 @@ export type StorageColumnTypes = {
       readonly rating: CodecTypes['pg/int4@1']['output'] | null;
       readonly status: 'PLANNED' | 'WATCHING' | 'COMPLETED' | 'DROPPED';
       readonly updatedAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
-      readonly userId: CodecTypes['pg/int4@1']['output'];
+      readonly userId: CodecTypes['pg/text@1']['output'];
     };
   };
 };
@@ -342,7 +342,7 @@ export type StorageColumnInputTypes = {
   readonly public: {
     readonly movie: {
       readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
-      readonly createdBy: CodecTypes['pg/int4@1']['input'];
+      readonly createdBy: CodecTypes['pg/text@1']['input'];
       readonly genres: ReadonlyArray<CodecTypes['pg/text@1']['input']>;
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly overview: CodecTypes['pg/text@1']['input'] | null;
@@ -367,7 +367,7 @@ export type StorageColumnInputTypes = {
       readonly rating: CodecTypes['pg/int4@1']['input'] | null;
       readonly status: 'PLANNED' | 'WATCHING' | 'COMPLETED' | 'DROPPED';
       readonly updatedAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
-      readonly userId: CodecTypes['pg/int4@1']['input'];
+      readonly userId: CodecTypes['pg/text@1']['input'];
     };
   };
 };
@@ -431,8 +431,8 @@ type ContractBase = Omit<
                   readonly nullable: true;
                 };
                 readonly createdBy: {
-                  readonly nativeType: 'int4';
-                  readonly codecId: 'pg/int4@1';
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
                   readonly nullable: false;
                 };
                 readonly createdAt: {
@@ -518,8 +518,8 @@ type ContractBase = Omit<
                   readonly nullable: false;
                 };
                 readonly userId: {
-                  readonly nativeType: 'int4';
-                  readonly codecId: 'pg/int4@1';
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
                   readonly nullable: false;
                 };
                 readonly movieId: {
@@ -663,7 +663,7 @@ type ContractBase = Omit<
               };
               readonly createdBy: {
                 readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
               readonly createdAt: {
                 readonly nullable: false;
@@ -788,7 +788,7 @@ type ContractBase = Omit<
               };
               readonly userId: {
                 readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
               readonly movieId: {
                 readonly nullable: false;

@@ -2,6 +2,7 @@ import express from 'express'
 import { config } from 'dotenv'
 import { connectDB, disconnectDB } from './config/db.js'
 import movieRoute from './routes/movieRoutes.js'
+import authRoute from './routes/authRoutes.js'
 
 config()
 connectDB()
@@ -9,6 +10,7 @@ connectDB()
 const app = express()
 
 app.use("/movies", movieRoute)
+app.use('/auth', authRoute)
 
 app.get("/hello", (req, res, next) => {
     console.log('Hello from /hello api')
