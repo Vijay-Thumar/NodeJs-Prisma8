@@ -56,7 +56,7 @@
               "createdBy": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/int4@1",
+                  "codecId": "pg/text@1",
                   "kind": "scalar"
                 }
               },
@@ -196,7 +196,7 @@
               "id": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/int4@1",
+                  "codecId": "pg/text@1",
                   "kind": "scalar"
                 }
               },
@@ -339,7 +339,7 @@
               "userId": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/int4@1",
+                  "codecId": "pg/text@1",
                   "kind": "scalar"
                 }
               }
@@ -435,8 +435,8 @@
                   "nullable": false
                 },
                 "createdBy": {
-                  "codecId": "pg/int4@1",
-                  "nativeType": "int4",
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
                   "nullable": false
                 },
                 "genres": {
@@ -533,12 +533,8 @@
                   "nullable": false
                 },
                 "id": {
-                  "codecId": "pg/int4@1",
-                  "default": {
-                    "expression": "autoincrement()",
-                    "kind": "function"
-                  },
-                  "nativeType": "int4",
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
                   "nullable": false
                 },
                 "name": {
@@ -635,8 +631,8 @@
                   "nullable": false
                 },
                 "userId": {
-                  "codecId": "pg/int4@1",
-                  "nativeType": "int4",
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
                   "nullable": false
                 }
               },
@@ -718,10 +714,10 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "a787ecff870800394311ddaa74f9d31b5ecb45be2e9631da1d43566d62d55ec9"
+    "storageHash": "81ef371a790820c852b372332129cff76e1c5b6a9f6742e6c9181dc56096c4c7"
   },
   "execution": {
-    "executionHash": "d4570b372ca50ce0f1f6f5eea2977fad87b52005a60b1119ea4ed3bdc2135136",
+    "executionHash": "742bb5f9a57d774997ed5dd5c721144d04aa9c3a29d4bc6e258c3db3c51a6172",
     "mutations": {
       "defaults": [
         {
@@ -733,6 +729,17 @@
             "column": "id",
             "namespace": "public",
             "table": "movie"
+          }
+        },
+        {
+          "onCreate": {
+            "id": "uuidv4",
+            "kind": "generator"
+          },
+          "ref": {
+            "column": "id",
+            "namespace": "public",
+            "table": "user"
           }
         },
         {

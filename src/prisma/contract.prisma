@@ -1,6 +1,6 @@
 // use prisma-next
 model User {
-  id             Int                        @id @default(autoincrement())
+  id             String                        @id @default(uuid())
   name           String?
   email          String                     @unique
   password       String
@@ -19,7 +19,7 @@ model Movie {
   genres         String[]        @default([])
   runtime        Int?
   posterUrl      String?
-  createdBy      Int
+  createdBy      String
   createdAt      DateTime        @default(now())
 
   creater        User            @relation("MovieCreator", fields:[createdBy], references:[id], onDelete: Cascade)
@@ -28,7 +28,7 @@ model Movie {
 
 model WatchlistItem {
   id        String          @id @default(uuid())
-  userId    Int
+  userId    String
   movieId   String
   status    WatchlistStatus @default(PLANNED)
   rating    Int?
