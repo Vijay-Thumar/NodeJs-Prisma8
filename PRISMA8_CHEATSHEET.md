@@ -46,3 +46,7 @@ If you have an existing database and want to pull its schema into Prisma, or if 
 | :-------------------------- | :----------------------- | :-------------------------- | :------------------------------------------------------------------------------- |
 | **Pull schema from DB**     | `prisma db pull`         | `npx prisma contract infer` | Reads an existing database and generates a `contract.prisma` file for you.       |
 | **Baseline an existing DB** | `prisma migrate resolve` | `npx prisma db sign`        | Tells Prisma "the database already matches the contract, mark it as up-to-date". |
+
+### Issue that i've faced and how to run commands to avoid missmatch in the migration with server db and local
+
+<img width="1376" height="2344" alt="Prisma commands" src="https://github.com/user-attachments/assets/3e2c078d-ae7c-4365-a0dd-1cb62f5a9adb" />
