@@ -24,13 +24,12 @@ const register = async (req, res) => {
         password: hashedPassword
     })
 
-
     res.status(201).json({
-        status: 'sucess', data: {
+        status: "sucess",
+        data: {
             user: { id: user.id, name, email }
         }
     })
 }
-
 
 export { register }

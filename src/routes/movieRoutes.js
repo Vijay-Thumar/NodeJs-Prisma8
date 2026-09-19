@@ -1,6 +1,5 @@
-import express from 'express'
+import express from "express"
 const route = express.Router()
-
 
 route.get("/hello", (req, res) => {
     res.json({

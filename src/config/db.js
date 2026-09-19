@@ -1,6 +1,6 @@
-import postgres from "@prisma/orm-postgres/runtime";
-import contractJson from "../prisma/contract.json" with { type: 'json' };
-import 'dotenv/config'; // <-- Add this right at the top
+import postgres from "@prisma/orm-postgres/runtime"
+import contractJson from "../prisma/contract.json" with { type: "json" }
+import "dotenv/config" // <-- Add this right at the top
 const prisma = postgres({
     contractJson,
     url: process.env.DATABASE_URL
@@ -14,39 +14,39 @@ const insertTestUser = async () => {
             name: "Prisma 8 Tester",
             updatedAt: new Date(),
             password: "qwe123dwwe"
-        });
+        })
 
-        console.log("Successfully created user:", newUser);
+        console.log("Successfully created user:", newUser)
     } catch (error) {
-        console.log("Error creating user:", error.message);
+        console.log("Error creating user:", error.message)
     }
 }
 
 // Method is created while testing and learning
 const getFirstUser = async () => {
     // Replaces prisma.user.findFirst()
-    const user = await prisma.orm.public.User.first();
-    console.log("Found user:", user);
+    const user = await prisma.orm.public.User.first()
+    console.log("Found user:", user)
 }
 
 const connectDB = async () => {
     try {
         // This will throw if the URL or credentials are bad
-        await prisma.connect();
-        console.log('DB connected via prisma!');
+        await prisma.connect()
+        console.log("DB connected via prisma!")
 
         // Log the available methods on the User model to debug the API
         // const userMethods = Object.keys(prisma.orm?.public?.User || {});
         // console.log('Available User model methods:', userMethods);
 
-        const user = await prisma.orm.public.User.first();
+        const user = await prisma.orm.public.User.first()
         if (!user) {
-            await insertTestUser();
+            await insertTestUser()
         } else {
             console.log("We have the first user: ", user)
         }
     } catch (error) {
-        console.log('There was database connection error', error.message)
+        console.log("There was database connection error", error.message)
         process.exit(1)
     }
 }
