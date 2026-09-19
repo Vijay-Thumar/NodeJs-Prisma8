@@ -1,33 +1,36 @@
 {
-  "name": "pedrotech-nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/server.js",
-    "postinstall": "prisma skills sync || exit 0",
-    "contract:emit": "prisma contract emit",
-    "db:update": "prisma db update",
-    "db:emit": "prisma contract emit"
-  },
-  "dependencies": {
-    "@prisma/adapter-pg": "^7.10.0",
-    "@prisma/client": "^7.10.0",
-    "@prisma/composer": "^0.17.0",
-    "@prisma/orm-postgres": "^8.0.0-rc.9",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "pg": "^8.23.0"
-  },
-  "devDependencies": {
-    "@prisma/cli-engine": "^0.2.3",
-    "@prisma/config": "^7.10.0",
-    "@types/node": "^22.20.2",
-    "nodemon": "^3.1.14",
-    "prisma": "^8.0.0-rc.10"
-  }
+    "name": "pedrotech-nodejs",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write .",
+        "dev": "nodemon ./src/server.js",
+        "postinstall": "prisma skills sync || exit 0",
+        "contract:emit": "prisma contract emit",
+        "db:update": "prisma db update",
+        "db:emit": "prisma contract emit"
+    },
+    "dependencies": {
+        "@prisma/adapter-pg": "^7.10.0",
+        "@prisma/client": "^7.10.0",
+        "@prisma/composer": "^0.17.0",
+        "@prisma/orm-postgres": "^8.0.0-rc.9",
+        "bcryptjs": "^3.0.3",
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1",
+        "pg": "^8.23.0"
+    },
+    "devDependencies": {
+        "@prisma/cli-engine": "^0.2.3",
+        "@prisma/config": "^7.10.0",
+        "@types/node": "^22.20.2",
+        "nodemon": "^3.1.14",
+        "prettier": "^3.9.8",
+        "prisma": "^8.0.0-rc.10"
+    }
 }

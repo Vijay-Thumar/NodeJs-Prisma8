@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+.git
+.env
+package-lock.json
+.agents
+.claude
+.cursor
+.devin
+migrations
+./src/prisma/contract.d.ts
+./src/prisma/contract.json
+
