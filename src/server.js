@@ -3,6 +3,7 @@ import { config } from "dotenv"
 import { connectDB, disconnectDB } from "./config/db.js"
 import movieRoute from "./routes/movieRoutes.js"
 import authRoute from "./routes/authRoutes.js"
+import watchlistRoute from "./routes/watchlistRoutes.js"
 
 config()
 connectDB()
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }))
 // API Routes
 app.use("/movies", movieRoute)
 app.use("/auth", authRoute)
+app.use("/watchlist", watchlistRoute)
 
 app.get("/hello", (req, res, next) => {
     console.log("Hello from /hello api")
