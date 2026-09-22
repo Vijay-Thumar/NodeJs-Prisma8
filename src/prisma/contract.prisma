@@ -20,7 +20,7 @@ model Movie {
   runtime        Int?
   posterUrl      String?
   createdBy      String
-  createdAt      DateTime        @default(now())
+  createdAt      TimestamptzString        @default(now())
 
   creater        User            @relation("MovieCreator", fields:[createdBy], references:[id], onDelete: Cascade)
   watchlistItems WatchlistItem[]
@@ -33,8 +33,8 @@ model WatchlistItem {
   status    WatchlistStatus @default(PLANNED)
   rating    Int?
   notes     String?
-  createdAt DateTime        @default(now())
-  updatedAt DateTime        @default(now())
+  createdAt TimestamptzString        @default(now())
+  updatedAt TimestamptzString        @default(now())
 
   user      User            @relation(fields:[userId], references:[id], onDelete: Cascade)
   movie     Movie           @relation(fields:[movieId], references:[id], onDelete: Cascade)
