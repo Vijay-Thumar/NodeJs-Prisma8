@@ -14,7 +14,7 @@
         "contract:emit": "prisma contract emit",
         "db:update": "prisma db update",
         "db:emit": "prisma contract emit",
-        "seed:movies":"node src/prisma/seed.js"
+        "seed:movies": "node src/prisma/seed.js"
     },
     "dependencies": {
         "@prisma/adapter-pg": "^7.10.0",
@@ -25,7 +25,8 @@
         "dotenv": "^17.4.2",
         "express": "^5.2.1",
         "jsonwebtoken": "^9.0.3",
-        "pg": "^8.23.0"
+        "pg": "^8.23.0",
+        "zod": "^4.6.5"
     },
     "devDependencies": {
         "@prisma/cli-engine": "^0.2.3",

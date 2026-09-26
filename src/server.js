@@ -20,7 +20,6 @@ app.use("/auth", authRoute)
 app.use("/watchlist", watchlistRoute)
 
 app.get("/hello", (req, res, next) => {
-    console.log("Hello from /hello api")
     res.json({
         message: "Hello from /hello api"
     })
